@@ -1,0 +1,108 @@
+/* シンプルでクリーンなスタイルシート */
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+/* メインコンテナ */
+.button-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column; /* コンテナ内の要素を縦に並べる */
+  gap: 20px; /* 修正: 要素間の隙間を20pxに縮小 */
+}
+
+/* ラベル＋テキスト入力欄（横並び） */
+.text-group {
+  display: flex;
+  flex-direction: column; /* 変更：ラベルとボタンを縦並びにする */
+  gap: 10px; /* 修正: 縦並びになった要素間の隙間を10pxに縮小 */
+  align-items: center;
+  margin-bottom: 0px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  transition: box-shadow 0.2s ease;
+}
+
+.text-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: #007bff;
+}
+
+.button-label {
+  font-size: 18px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px; /* ラベルの下に少しスペースを追加 */
+}
+
+/* ボタングループ */
+.button-group {
+  display: flex; /* ボタンは横並びを維持 */
+  gap: 20px;
+  justify-content: center;
+}
+
+.button-group button {
+  padding: 15px 30px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 120px;
+}
+
+.button-group button:hover {
+  background: #0056b3;
+}
+
+.button-group button:active {
+  background: #004085;
+}
+
+/* 戻るボタンのグループ */
+.return-button-group {
+  margin-top: 50px;
+  text-align: center;
+}
+
+/* 戻るボタンのスタイルを他のボタンと統一 */
+.return-button-group button {
+  padding: 15px 30px;
+  background: #007bff; /* 装備/スキルボタンと同じ色に設定 */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  min-width: 200px; /* 幅は元のままとする */
+}
+
+.return-button-group button:hover {
+  background: #0056b3; /* 装備/スキルボタンと同じ色に設定 */
+}
+
+.return-button-group button:active {
+  background: #004085; /* 装備/スキルボタンと同じ色に設定 */
+}

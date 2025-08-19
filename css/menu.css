@@ -1,0 +1,209 @@
+/* シンプル・クリーンスタイルシート */
+body {
+  font-family: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #1a202c;
+  line-height: 1.6;
+}
+
+/* メインタイトル */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: -0.025em;
+}
+
+/* ボタンコンテナ */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* シンプルボタンスタイル */
+button {
+  background: #4a5568;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  font-family: inherit;
+}
+
+/* ボタンホバー効果 */
+button:hover {
+  background: #2d3748;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ボタンアクティブ効果 */
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* フォーカス効果 */
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.4);
+}
+
+/* フォーム */
+form {
+  display: inline;
+}
+
+/* ボタンバリエーション */
+.btn-primary {
+  background: #3182ce;
+}
+
+.btn-primary:hover {
+  background: #2c5282;
+}
+
+.btn-primary:focus {
+  box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.4);
+}
+
+.btn-secondary {
+  background: #718096;
+}
+
+.btn-secondary:hover {
+  background: #4a5568;
+}
+
+.btn-secondary:focus {
+  box-shadow: 0 0 0 3px rgba(113, 128, 150, 0.4);
+}
+
+.btn-success {
+  background: #38a169;
+}
+
+.btn-success:hover {
+  background: #2f855a;
+}
+
+.btn-success:focus {
+  box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.4);
+}
+
+.btn-warning {
+  background: #d69e2e;
+  color: white;
+}
+
+.btn-warning:hover {
+  background: #b7791f;
+}
+
+.btn-warning:focus {
+  box-shadow: 0 0 0 3px rgba(214, 158, 46, 0.4);
+}
+
+.btn-danger {
+  background: #e53e3e;
+}
+
+.btn-danger:hover {
+  background: #c53030;
+}
+
+.btn-danger:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.4);
+}
+
+/* アウトラインボタン */
+.btn-outline {
+  background: transparent;
+  color: #4a5568;
+  border: 2px solid #4a5568;
+}
+
+.btn-outline:hover {
+  background: #4a5568;
+  color: white;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .button-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  button {
+    font-size: 0.9rem;
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .button-container {
+    gap: 0.5rem;
+  }
+}
+
+/* シンプルなスクロールバー */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
+
+/* アクセシビリティ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
