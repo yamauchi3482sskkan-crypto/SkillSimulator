@@ -1,12 +1,8 @@
 <?php
-// DB接続（例）
-$host = 'localhost';
-$dbname = 'test';
-$user = 'root';
-$pass = '';
+require_once 'functions.php';
 
 try {
-	$pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $pass);
+    $pdo = connectDB(); // 共通関数からDB接続取得
 	// EquipSetテーブルからデータ取得
 	$sql = "SELECT EquipSetID, EquipSetName FROM EquipSet ORDER BY EquipSetID";
 	$stmt = $pdo->query($sql);
