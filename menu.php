@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>スキルサーチツール</title>
- 	<link rel="stylesheet" href="css/equipset_search.css">
+ 	<link rel="stylesheet" href="css/menu.css">
 
 </head>
 <body>
-    <div class="button-container">
+    <div class="header-container">
 	    <h1>スキルサーチツール</h1>
+    </div>
+
+    <div class="button-container">
 
         <div class="button-group">
 	        <!-- 新規登録ボタン -->
@@ -27,6 +30,7 @@
 	        </form>
 		<div>
     </div>
+
 	
 </body>
 </html>
