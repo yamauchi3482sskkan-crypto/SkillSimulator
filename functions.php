@@ -1,14 +1,11 @@
 <?php
 function connectDB(): PDO {
-    $dsn = 'mysql:host=localhost;dbname=test;charset=utf8';
-    $user = 'root';
-    $password = '';
-    try {
-        return new PDO($dsn, $user, $password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-    } catch (PDOException $e) {
-        exit('DB接続エラー: ' . htmlspecialchars($e->getMessage()));
-    }
+    // SQLiteファイルのパス
+    $dbPath = __DIR__ . '/SkillSearchTool.db';
+    return new PDO('sqlite:' . $dbPath);
+    
 }
+
 
 function getEquipSet(PDO $pdo, string $equipSetID): ?array {
     $sql = <<<SQL
@@ -62,9 +59,9 @@ function getSkills(PDO $pdo, array $equipIDs): array {
 }
 
 function getEquipsetOptions(): array {
-    $config = require 'config/db_config.php';
+    
     try {
-        $pdo = new PDO($config['dsn'], $config['user'], $config['password'], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        $pdo = connectDB();
         $stmt = $pdo->query("SELECT EquipSetID, EquipSetName FROM equipset ORDER BY EquipSetName");
         $options = [];
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -77,9 +74,9 @@ function getEquipsetOptions(): array {
 }
 
 function getEquipListByPart(int $partID): array {
-    $config = require 'config/db_config.php';
+
     try {
-        $pdo = new PDO($config['dsn'], $config['user'], $config['password'], [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+        $pdo = connectDB();
         $stmt = $pdo->prepare("SELECT EquipID AS id, EquipName AS name FROM equipmaster WHERE EquipPartsID = :partID ORDER BY EquipName");
         $stmt->execute([':partID' => $partID]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
